@@ -1,0 +1,72 @@
+﻿@using LR6.Services
+@{
+    ViewData["Title"] = "Your order";
+    var order = @Model as OrderModel;
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/showOrder.css" />
+</head>
+
+<div class="text-center">
+    @if ((bool)ViewData["displayTable"])
+    {
+        <h3>Dear @order.Customer.FirstName, your order:</h3>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <td>Product type</td>
+                    <td>Product name</td>
+                    <td>Quantity, pcs.</td>
+                    <td>Price per 1 pcs.</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var orderItem in order.Products)
+                {
+                    <tr>
+                        <td style="text-align: left;">@orderItem.Product.Type</td>
+                        <td style="text-align: left;">@orderItem.Product.Name</td>
+                        <td>@orderItem.Quantity</td>
+                        <td>@orderItem.Product.Price$</td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="4" style="text-align: center;">
+                        <b>Total price:</b> @Math.Round((double)ViewData["totalPrice"], 2).ToString()$
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    }
+    else
+        {
+            <h5>Something went wrong...</h5>
+        }
+    <br />
+@* 
+    @if (!string.IsNullOrEmpty((string?)ViewData["warningMessage"]))
+    {
+        <h5><b>Warning:</b> @ViewData["warningMessage"]</h5>
+        <br />
+        <h5>Contact us if you have any problems!</h5>
+    }
+*@
+
+    @if (ViewData["warningMessages"] is List<string> warningMessages && warningMessages.Count > 0)
+    {
+        <h5><b>Warning:</b></h5>
+        foreach (var message in warningMessages)
+        {
+            <h5>@message</h5>
+        }
+        <br />
+        <h5>Contact us if you have any problems!</h5>
+    }
+</div>
+

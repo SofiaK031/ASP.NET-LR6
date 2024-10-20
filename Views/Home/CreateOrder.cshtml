@@ -1,0 +1,55 @@
+﻿@using LR6.Services
+@{
+    ViewData["Title"] = "Create order";
+    var productsByType = (ViewData["AvailableProducts"] as List<ProductModel>)
+        .GroupBy(p => p.Type)
+        .ToList();
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/createOrder.css" />
+</head>
+
+<div class="text-center">
+    <h3>Select product</h3>
+    <br /><br />
+    <form asp-action="CreateOrder" method="get" class="form-create-order">
+        <div class="form-group">
+            <label>Product type: </label>
+            <select name="currentProductId">
+                @foreach (var productGroup in productsByType)
+                {
+                    <optgroup label="@productGroup.Key">
+                        @foreach (var product in productGroup)
+                        {
+                            <option value="@product.id">
+                                @product.Name - @product.Price$ - @product.AvailableQuantity pcs.
+                            </option>
+                        }
+                    </optgroup>
+                }
+            </select>
+        </div>
+        <br />
+
+        <div class="form-group">
+            <label>Quantity: </label>
+            <input name="quantityOfCurrentProduct" type="number" value="0" min="0" />
+        </div>
+        <br />
+
+        @if ((int)ViewData["currentNumberOfForm"] == (int)ViewData["quantityOfProductTypes"])
+        {
+            <input type="submit" value="Confirm order" />
+        }
+        else
+        {
+            <input type="submit" value="Choose next" />
+        }
+
+        <input name="orderId" type="hidden" value="@ViewData["OrderId"]" />
+        <input name="currentNumberOfForm" type="hidden" value="@ViewData["currentNumberOfForm"]" />
+        <input name="quantityOfProductTypes" type="hidden" value="@ViewData["quantityOfProductTypes"]" />
+    </form>
+</div>
+

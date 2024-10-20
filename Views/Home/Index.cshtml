@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home page";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+
+<div class="text-center">
+    <h2>Welcome to our page!</h2>
+    <br />
+    <form asp-action="MakeOrder" method="get" class="form-style">
+        <div class="form-group">
+            <label>First name: </label>
+            <input name="firstName" type="text" placeholder="William" value="Lia" maxlength="50" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Last name: </label>
+            <input name="lastName" type="text" placeholder="Johnson" value="Maddison" maxlength="50" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Age: </label>
+            <input name="age" type="number" placeholder="21" value="21" min="0" max="120" />
+        </div>
+        <br />
+        <input type="submit" value="LOG IN" class="btn" />
+    </form>
+</div>

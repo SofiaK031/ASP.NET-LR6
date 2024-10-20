@@ -1,0 +1,108 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.order-form {
+    display: inline-block;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+    .order-form:hover {
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+label {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+}
+
+#quantity { margin-right: 10px; }
+
+#pcs { margin-left: 10px; }
+
+input[type="number"] {
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80px;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+p, ul {
+    text-align: left;
+    align-content:flex-start;
+}
+
+p {
+    text-indent: 25px;
+}
+
+.submit-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    margin-bottom: 0px;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.back-link {
+    text-align: center;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: #2980b9;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+    .back-link a:hover {
+        color: #1abc9c;
+        text-decoration: underline;
+    }

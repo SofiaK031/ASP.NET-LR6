@@ -1,0 +1,130 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 30px;
+    width: 50%;
+    background-color: #eaff79;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, .4);
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+}
+
+    .form-style:before, .form-style:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        box-sizing: border-box;
+        pointer-events: none;
+    }
+
+    .form-style:before {
+        bottom: 0;
+        left: 0;
+        border-left: 5px solid orange;
+        border-top: 5px solid orange;
+        border-radius: 10px;
+        transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+    }
+
+    .form-style:after {
+        top: 0;
+        right: 0;
+        border-right: 5px solid orange;
+        border-bottom: 5px solid orange;
+        border-radius: 10px;
+        transition: 0s ease opacity .4s, .2s ease width, .2s ease height .2s;
+    }
+
+    .form-style:hover:before,
+    .form-style:hover:after {
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+    }
+
+.form-style:hover:before {
+    transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+}
+
+    .form-style:hover:after {
+        transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
+    }
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.btn {
+    text-decoration: none;
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    line-height: 45px;
+    border-radius: 45px;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #524f4e;
+    background: orange;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #2EE59D;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, 0.5);
+    color: white;
+    transform: translateY(-7px);
+}
